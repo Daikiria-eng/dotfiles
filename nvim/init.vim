@@ -1,6 +1,4 @@
-source $HOME/.config/nvim/themes/airline.vim
 set number
-colorscheme delek
 
 set number
 set expandtab
@@ -9,6 +7,13 @@ set smartindent
 set softtabstop=4
 set shiftwidth=4
 set tabstop=4
+
+let g:airline_theme='bubblegum'
+
+highlight Normal guibg=none
+highlight NonText guibg=none
+highlight Normal ctermbg=none
+highlight NonText ctermbg=none
 
 call plug#begin()
 
@@ -20,7 +25,7 @@ call plug#begin()
 call plug#end()
 
 "Enable mouse click for nvim
-"set mouse=a
+set mouse=
 "Fix cursor replacement after closing nvim
 "set guicursor=
 "Shift + Tab does inverse tab

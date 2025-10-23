@@ -4,23 +4,28 @@
 
 # terminal emulator
 super + Return
-	kitty
+    kitty
+	#LIBGL_ALWAYS_SOFTWARE=1 kitty
 
 ctrl + alt + t
 	terminator
 
+super + ctrl + alt + l
+	XSECURELOCK_FONT=HackNerdFont XSECURELOCK_PASSWORD_PROMPT=disco xsecurelock
+
 # program launcher
 super + r
-	rofi -show drun	
+	dmenu_run
 
-alt + shift + f
-    firefox
+super + shift + r
+    rofi -show drun
 
-alt + shift + b
-    /opt/brave.com/brave/./brave
 # make sxhkd reload its configuration files:
 super + Escape
 	pkill -USR1 -x sxhkd
+
+super + b
+    ~/test-env.sh
 
 #
 # bspwm hotkeys
@@ -42,20 +47,21 @@ super + m
 	flameshot gui
 
 XF86AudioRaiseVolume
-	amixer set Master 5%+
+	pactl set-sink-volume @DEFAULT_SINK@ +5%
 
 XF86AudioLowerVolume
-	amixer set Master 5%-
+	pactl set-sink-volume @DEFAULT_SINK@ -5%
 
 XF86AudioMute
-    amixer set Master {mute,unmute}
+    pactl set-sink-mute 0 {0,1}
 
 #Brightness
 XF86MonBrightness{Up,Down}
 	brightnessctl set 355{+,-}
 
 super + e
-    caja
+    thunar
+
 
 # send the newest marked node to the newest preselected node
 super + y

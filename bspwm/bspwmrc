@@ -1,16 +1,16 @@
-#! /bin/sh
+#!/bin/sh
+
+if [ -z "$DBUS_SESSION_BUS_ADDRESS" ]; then
+    eval $(dbus-launch --sh-syntax --exit-with-session)
+fi
 
 pgrep -x sxhkd > /dev/null || sxhkd &
-picom &
-nitrogen --restore &
-$HOME/.config/polybar/launch.sh --shapes &
-$HOME/.java_wm.sh &
-setxkbmap latam &
+picom -b &
+polybar &
+feh --bg-fill /home/daiky/Pictures/desk/wallhaven-kwd36d.jpg &
+setxkbmap latam
 
-bspc monitor eDP-1 -n monitor0 -d I II III IV V
-bspc monitor HDMI-1 -n monitor1 -d VI VII VIII IX X
-#bspc monitor HDMI-1 -s eDP-1
-bspc monitor eDP-1 -s HDMI-1
+bspc monitor -d I II III IV V VI VII VIII IX X
 
 bspc config border_width         2
 bspc config window_gap          12
