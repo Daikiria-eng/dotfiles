@@ -8,8 +8,6 @@ set softtabstop=4
 set shiftwidth=4
 set tabstop=4
 
-let g:airline_theme='bubblegum'
-
 highlight Normal guibg=none
 highlight NonText guibg=none
 highlight Normal ctermbg=none
@@ -24,6 +22,9 @@ call plug#begin()
 
 call plug#end()
 
+let g:airline_powerline_fonts = 3
+let g:airline_theme='bubblegum'
+
 "Enable mouse click for nvim
 set mouse=
 "Fix cursor replacement after closing nvim
@@ -36,3 +37,4 @@ set list listchars=tab:>\ ,trail:+,eol:$
 
 "wrap to next line when end of line is reached
 set whichwrap+=<,>,[]
+colorscheme wildcharm

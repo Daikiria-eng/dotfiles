@@ -46,6 +46,9 @@ super + m
 @Print
 	flameshot gui
 
+shift + @Print
+    flameshot
+
 XF86AudioRaiseVolume
 	pactl set-sink-volume @DEFAULT_SINK@ +5%
 

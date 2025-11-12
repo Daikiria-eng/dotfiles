@@ -1,25 +1,14 @@
 [global_config]
-  title_transmit_bg_color = "#631313"
-  title_inactive_fg_color = "#f6f5f4"
-  title_inactive_bg_color = "#000000"
 [keybindings]
-  go_up = <Alt>k
-  go_down = <Alt>j
-  go_left = <Alt>h
-  go_right = <Alt>l
-  layout_launcher = ""
 [profiles]
   [[default]]
-    background_darkness = 0.65
+    background_darkness = 0.68
     background_type = transparent
-    cursor_color = "#aaaaaa"
-    font = Hack Nerd Font 9
-    foreground_color = "#ffffff"
-    scrollbar_position = hidden
-    scrollback_infinite = True
-    palette = "#000000:#cc0000:#ed333b:#c4a000:#3465a4:#75507b:#06989a:#d3d7cf:#555753:#ef2929:#e01b24:#fce94f:#729fcf:#ad7fa8:#34e2e2:#eeeeec"
+    font = 0xProto Nerd Font 10
     use_system_font = False
-    use_theme_colors = True
+    title_transmit_bg_color = "#1c71d8"
+    title_inactive_fg_color = "#f6f5f4"
+    title_inactive_bg_color = "#000000"
 [layouts]
   [[default]]
     [[[window0]]]
