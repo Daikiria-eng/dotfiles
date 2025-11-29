@@ -1,6 +1,7 @@
 require('plugin-config.lualine')
 require('plugin-config.nvim-tree')
 require('plugin-config.lsp')
+require('plugin-config.nightfox')
 
 local map = vim.keymap.set
 
@@ -29,7 +30,6 @@ require('packer').startup(function(use)
         'nvim-lualine/lualine.nvim',
         requires = { 'kyazdani42/nvim-web-devicons', opt = true }
     }
-    use 'nvim-tree/nvim-tree.lua'
 
     --lsp & autocompletion
     use 'neovim/nvim-lspconfig'
@@ -43,6 +43,10 @@ require('packer').startup(function(use)
     use 'hrsh7th/cmp-path'
     use 'L3MON4D3/LuaSnip'
     use 'saadparwaiz1/cmp_luasnip'
+
+
+    use "EdenEast/nightfox.nvim"
+    use "yorumicolors/yorumi.nvim"
 end)
 
 vim.g.loaded_netrw = 1
@@ -67,10 +71,13 @@ vim.opt.listchars = { tab = '> ', trail = '+', eol = '$' }
 vim.opt.whichwrap:append('<,>,[,]')
 
 -- Colorscheme
-vim.cmd('colorscheme wildcharm')
+--vim.cmd('colorscheme wildcharm')
+--vim.cmd("colorscheme nightfox")
 
 
 map('n', '<leader>e', ':NvimTreeToggle<CR>', { noremap = true, silent = true, desc = 'Toggle NvimTree' })
 map('n', '<C-n>', ':NvimTreeToggle<CR>', { noremap = true, silent = true, desc = 'Toggle NvimTree' })
 map('n', '<leader>nf', ':NvimTreeFocus<CR>', { noremap = true, silent = true, desc = 'Focus NvimTree' })
 map('n', '<leader>nc', ':NvimTreeCollapse<CR>', { noremap = true, silent = true, desc = 'Collapse NvimTree' })
+
+--vim.cmd("colorscheme yorumi")

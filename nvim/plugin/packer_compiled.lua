@@ -114,6 +114,11 @@ _G.packer_plugins = {
     path = "/home/daiky/.local/share/nvim/site/pack/packer/start/mason.nvim",
     url = "https://github.com/williamboman/mason.nvim"
   },
+  ["nightfox.nvim"] = {
+    loaded = true,
+    path = "/home/daiky/.local/share/nvim/site/pack/packer/start/nightfox.nvim",
+    url = "https://github.com/EdenEast/nightfox.nvim"
+  },
   ["nvim-cmp"] = {
     loaded = true,
     path = "/home/daiky/.local/share/nvim/site/pack/packer/start/nvim-cmp",
@@ -138,6 +143,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/daiky/.local/share/nvim/site/pack/packer/start/packer.nvim",
     url = "https://github.com/wbthomason/packer.nvim"
+  },
+  ["yorumi.nvim"] = {
+    loaded = true,
+    path = "/home/daiky/.local/share/nvim/site/pack/packer/start/yorumi.nvim",
+    url = "https://github.com/yorumicolors/yorumi.nvim"
   }
 }
 
