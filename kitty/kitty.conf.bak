@@ -6,7 +6,6 @@ url_style curly
 shell bash
 
 background_opacity 0.75
-
 font_size 9.1
 
 tab_bar_edge bottom
@@ -64,6 +63,6 @@ enabled_layouts splits:split_axis=horizontal
 
 
 # BEGIN_KITTY_THEME
-# Adwaita darker
+# 1984 Dark
 include current-theme.conf
 # END_KITTY_THEME

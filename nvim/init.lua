@@ -12,6 +12,7 @@ vim.opt.smartindent = true
 vim.opt.softtabstop = 4
 vim.opt.shiftwidth = 4
 vim.opt.tabstop = 4
+-- vim.wo.cursorline = true
 
 -- Highlight para fondo transparente
 vim.cmd([[

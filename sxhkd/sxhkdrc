@@ -7,6 +7,9 @@ super + Return
     kitty
 	#LIBGL_ALWAYS_SOFTWARE=1 kitty
 
+super + shift + Return
+    LD_PRELOAD=/usr/lib/libjemalloc.so kitty
+
 ctrl + alt + t
 	terminator
 
@@ -23,6 +26,9 @@ super + shift + r
 # make sxhkd reload its configuration files:
 super + Escape
 	pkill -USR1 -x sxhkd
+
+super + v
+    copyq show
 
 super + b
     ~/test-env.sh

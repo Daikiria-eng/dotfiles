@@ -21,6 +21,9 @@ require("mason-lspconfig").setup({
         "html",             -- HTML
         "cssls",            -- CSS
         "jsonls",           -- JSON
+        "bqls",
+        "clangd"
+        --"postgres-language-server"
     },
     automatic_installation = true,
 })
@@ -75,7 +78,7 @@ local capabilities = require('cmp_nvim_lsp').default_capabilities()
 -- Función para configurar keymaps cuando se activa un LSP
 local on_attach = function(client, bufnr)
     local opts = { noremap = true, silent = true, buffer = bufnr }
-    
+
     -- Navegación
     vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, opts)
     vim.keymap.set('n', 'gd', vim.lsp.buf.definition, opts)
@@ -83,16 +86,16 @@ local on_attach = function(client, bufnr)
     vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, opts)
     vim.keymap.set('n', '<C-k>', vim.lsp.buf.signature_help, opts)
     vim.keymap.set('n', 'gr', vim.lsp.buf.references, opts)
-    
+
     -- Acciones de código
     vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename, opts)
     vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, opts)
-    
+
     -- Diagnósticos
     vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float, opts)
     vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, opts)
     vim.keymap.set('n', ']d', vim.diagnostic.goto_next, opts)
-    
+
     -- Formato
     vim.keymap.set('n', '<leader>f', function()
         vim.lsp.buf.format({ async = true })
@@ -204,8 +207,17 @@ vim.lsp.config('cssls', default_config)
 -- JSON
 vim.lsp.config('jsonls', default_config)
 
+-- C
+vim.lsp.config('clangd', default_config)
+
+-- SQL
+vim.lsp.config('bqls', default_config)
+
+-- PLPSQL
+--vim.lsp.config('postgres-language-server', default_config)
+
 -- Habilitar los servidores LSP
-local servers = {'lua_ls', 'pyright', 'ts_ls', 'html', 'cssls', 'jsonls'}
+local servers = {'lua_ls', 'pyright', 'ts_ls', 'html', 'cssls', 'jsonls','bqls','clangd'}
 if vim.fn.executable('jdtls') == 1 then
     table.insert(servers, 'jdtls')
 end

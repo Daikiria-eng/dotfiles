@@ -1,14 +1,15 @@
 #!/bin/sh
 
-if [ -z "$DBUS_SESSION_BUS_ADDRESS" ]; then
-    eval $(dbus-launch --sh-syntax --exit-with-session)
-fi
-
 pgrep -x sxhkd > /dev/null || sxhkd &
-picom -b &
+xsetroot -cursor_name left_ptr &
+picom -b --backend xrender &
+redshift -l 0:0 6000:3600 &
+telegram &
+copyq &
 polybar &
-feh --bg-fill /home/daiky/Pictures/desk/xuteng_pan/wallhaven-j5wd8p.jpg &
-setxkbmap latam
+flameshot &
+feh --bg-fill $HOME/Pictures/desktop/space_body.png &
+setxkbmap latam &
 
 bspc monitor -d I II III IV V VI VII VIII IX X
 
@@ -27,3 +28,4 @@ bspc rule -a Chromium desktop='^2'
 bspc rule -a mplayer2 state=floating
 bspc rule -a Kupfer.py focus=on
 bspc rule -a Screenkey manage=off
+bspc rule -a copyq state=floating

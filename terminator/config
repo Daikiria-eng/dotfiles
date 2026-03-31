@@ -2,13 +2,10 @@
 [keybindings]
 [profiles]
   [[default]]
-    background_darkness = 0.68
+    background_darkness = 0.58
     background_type = transparent
-    font = 0xProto Nerd Font 10
+    font = Terminess Nerd Font Propo Medium 10
     use_system_font = False
-    title_transmit_bg_color = "#1c71d8"
-    title_inactive_fg_color = "#f6f5f4"
-    title_inactive_bg_color = "#000000"
 [layouts]
   [[default]]
     [[[window0]]]
