@@ -9,7 +9,6 @@ copyq &
 polybar &
 flameshot &
 feh --bg-fill $HOME/Pictures/desktop/space_body.png &
-setxkbmap latam &
 
 bspc monitor -d I II III IV V VI VII VIII IX X
 

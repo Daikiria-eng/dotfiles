@@ -2,6 +2,7 @@ require('plugin-config.lualine')
 require('plugin-config.nvim-tree')
 require('plugin-config.lsp')
 require('plugin-config.nightfox')
+require('plugin-config.indent-blankline')
 
 local map = vim.keymap.set
 
@@ -12,7 +13,7 @@ vim.opt.smartindent = true
 vim.opt.softtabstop = 4
 vim.opt.shiftwidth = 4
 vim.opt.tabstop = 4
--- vim.wo.cursorline = true
+vim.wo.cursorline = true
 
 -- Highlight para fondo transparente
 vim.cmd([[
@@ -48,6 +49,7 @@ require('packer').startup(function(use)
 
     use "EdenEast/nightfox.nvim"
     use "yorumicolors/yorumi.nvim"
+    use "lukas-reineke/indent-blankline.nvim"
 end)
 
 vim.g.loaded_netrw = 1
@@ -56,7 +58,9 @@ vim.g.loaded_netrwPlugin = 1
 -- optionally enable 24-bit colour
 vim.opt.termguicolors = true
 
-
+if vim.g.vscode then
+    vim.opt.cmdheight = 4
+end
 
 -- Habilitar clic del mouse
 vim.opt.mouse = ''
