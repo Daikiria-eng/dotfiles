@@ -44,8 +44,26 @@
         {
           "type": "git",
           "style": "powerline",
-          "template": "{{ .HEAD }}{{if .BranchStatus }} {{ .BranchStatus }}{{ end }}{{ if .Working.Changed }} \uf044 {{ .Working.String }}{{ end }}{{ if and (.Staging.Changed) (.Working.Changed) }} |{{ end }}{{ if .Staging.Changed }} \uf046 {{ .Staging.String }}{{ end }} ",
-          "foreground": "#00FF16"
+          "foreground": "#00FF16",
+          "foreground_templates": [
+            "{{ if or (.Working.Changed) (.Staging.Changed) }}#00FF16{{ end }}",
+            "{{ if and (gt .Ahead 0) (gt .Behind 0) }}#FFEB3B{{ end }}",
+            "{{ if gt .Ahead 0 }}#FFCC80{{ end }}",
+            "{{ if gt .Behind 0 }}#B388FF{{ end }}"
+          ],
+          "template": "{{ .UpstreamIcon }}{{ .HEAD }}{{if .BranchStatus }} {{ .BranchStatus }}{{ end }}{{ if .Working.Changed }}  {{ .Working.String }}{{ end }}{{ if and (.Working.Changed) (.Staging.Changed) }} |{{ end }}{{ if .Staging.Changed }}  {{ .Staging.String }}{{ end }}{{ if gt .StashCount 0 }}  {{ .StashCount }}{{ end }} ",
+          "options": {
+            "fetch_status": true,
+            "fetch_upstream_icon": true,
+            "untracked_modes": {
+              "/Users/user/Projects/oh-my-posh/": "no"
+            },
+            "source": "cli",
+            "mapped_branches": {
+              "feat/*": "🚀 ",
+              "bug/*": "🐛 "
+            }
+          }
         },
         {
           "foreground": "#906cff",
