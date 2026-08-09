@@ -26,4 +26,6 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-eval "$(oh-my-posh init zsh --config ~/.config/posh.conf/space.json)"
+export PATH=$PATH:/opt/idea-IU-261.22158.277/bin:/opt/WebStorm-261.24374.125/bin
+export PATH=/home/daiky/.nvm/versions/node/v24.15.0/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/opt/idea-IU-261.22158.277/bin:/opt/WebStorm-261.24374.125/bin:/home/daiky/.local/bin
+eval "$(oh-my-posh init zsh --config ~/.posh.conf/space.json)"
