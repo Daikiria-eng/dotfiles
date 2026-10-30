@@ -2,17 +2,24 @@ require('plugin-config.lualine')
 require('plugin-config.nvim-tree')
 require('plugin-config.lsp')
 require('plugin-config.nightfox')
+require('plugin-config.indent-blankline')
+require('plugin-config.tabby')
 
 local map = vim.keymap.set
 
 vim.opt.number = true
 vim.opt.expandtab = true
-vim.opt.autoindent = true
+--vim.opt.autoindent = true
 vim.opt.smartindent = true
 vim.opt.softtabstop = 4
 vim.opt.shiftwidth = 4
 vim.opt.tabstop = 4
--- vim.wo.cursorline = true
+vim.wo.cursorline = true
+vim.opt.showtabline=2
+
+if vim.g.vscode then
+    vim.opt.cmdheight = 1
+end
 
 -- Highlight para fondo transparente
 vim.cmd([[
@@ -26,11 +33,14 @@ vim.cmd([[
 require('packer').startup(function(use)
     use 'wbthomason/packer.nvim'
     use 'kyazdani42/nvim-web-devicons'
+    use("nvim-tree/nvim-web-devicons")
     use 'kyazdani42/nvim-tree.lua'
     use {
         'nvim-lualine/lualine.nvim',
         requires = { 'kyazdani42/nvim-web-devicons', opt = true }
     }
+
+    use 'nanozuki/tabby.nvim'
 
     --lsp & autocompletion
     use 'neovim/nvim-lspconfig'
@@ -48,6 +58,8 @@ require('packer').startup(function(use)
 
     use "EdenEast/nightfox.nvim"
     use "yorumicolors/yorumi.nvim"
+    use "lukas-reineke/indent-blankline.nvim"
+
 end)
 
 vim.g.loaded_netrw = 1
@@ -66,7 +78,11 @@ vim.keymap.set('i', '<S-Tab>', '<C-d>', { noremap = true })
 
 -- Ver caracteres invisibles
 vim.opt.list = true
-vim.opt.listchars = { tab = '> ', trail = '+', eol = '$' }
+vim.opt.listchars = {
+    tab = '» ',
+    trail = '•',
+    eol = '$'
+}
 
 -- Wrap a la siguiente línea cuando se alcanza el final de línea
 vim.opt.whichwrap:append('<,>,[,]')
